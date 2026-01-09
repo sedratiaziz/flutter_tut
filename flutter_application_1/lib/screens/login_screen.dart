@@ -16,6 +16,9 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+
+
+            // Homescreen welcome text
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 50.0),
               child: Text(
@@ -23,13 +26,29 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),
               ),
             ),
-        
+
+
+            // Homescreen Image
             Image.asset('assets/img/hero.jpg'),
-        
+
+
+            // Homepage Login button
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 50.0),
-              child: ElevatedButton(onPressed: () {}, child: Text('Login')),
+              padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(double.infinity, 65),
+                  shape: RoundedSuperellipseBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    side: BorderSide(color: Colors.black),
+                  ),
+                ),
+                child: Text('Login'),
+              ),
             ),
+
+
           ],
         ),
       ),
