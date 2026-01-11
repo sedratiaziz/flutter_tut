@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/home_screen.dart';
 import 'package:flutter_application_1/screens/login_screen.dart';
 import 'utils/colors/colors.dart';
 
@@ -17,10 +18,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: backgroundColor,
       ),
+      initialRoute: '/login',
       routes: {
-        '/login': (context) => const LoginScreen()
+        '/login': (context) => const LoginScreen(),
+        '/home': (context) => const HomeScreen(),
       },
-      home: const LoginScreen(),
       
     );
   }

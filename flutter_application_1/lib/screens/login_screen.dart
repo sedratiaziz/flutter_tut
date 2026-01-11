@@ -13,33 +13,34 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      // Bottom navigation bar
-       bottomNavigationBar: NavigationBar(
-        indicatorColor: Colors.amber,
-        destinations: const <Widget>[
-          NavigationDestination(
-            selectedIcon: Icon(Icons.home),
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-          ),
-          NavigationDestination(
-            icon: Badge(child: Icon(Icons.message_outlined)),
-            label: 'Messages',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.add),
-            label: 'Join',
-          ),
-          NavigationDestination(
-            icon: Badge(child: Icon(Icons.notifications_outlined)),
-            label: 'Notifications',
-          ),
-          NavigationDestination(
-            icon: Badge(label: Text('2'), child: Icon(Icons.person_2_outlined)),
-            label: 'Messages',
-          ),
-        ],
-      ),
+      // // Bottom navigation bar
+      //  bottomNavigationBar: NavigationBar(
+      //   indicatorColor: Colors.amber,
+      //   destinations: const <Widget>[
+      //     NavigationDestination(
+      //       selectedIcon: Icon(Icons.home),
+      //       icon: Icon(Icons.home_outlined),
+      //       label: 'Home',
+      //     ),
+      //     NavigationDestination(
+      //       icon: Badge(child: Icon(Icons.message_outlined)),
+      //       label: 'Messages',
+      //     ),
+      //     NavigationDestination(
+      //       icon: Icon(Icons.add),
+      //       label: 'Join',
+      //     ),
+      //     NavigationDestination(
+      //       icon: Badge(child: Icon(Icons.notifications_outlined)),
+      //       label: 'Notifications',
+      //     ),
+      //     NavigationDestination(
+      //       icon: Badge(label: Text('2'), child: Icon(Icons.person_2_outlined)),
+      //       label: 'Messages',
+      //     ),
+      //   ],
+      // ),
+
 
       body: Center(
         child: Column(
@@ -50,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
             // Homescreen welcome text
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 50.0),
+              padding: const EdgeInsets.symmetric(vertical: 0.0),
               child: Text(
                 'Welcome to Zoom v2!',
                 style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),
@@ -66,7 +67,9 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/home');
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: primaryButtonColor,
                   minimumSize: Size(double.infinity, 65),
