@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/home_content.dart';
+import 'package:flutter_application_1/screens/meeting_screen.dart';
+import 'package:flutter_application_1/screens/meeting_screen.dart';
 import 'package:flutter_application_1/screens/login_screen.dart';
-import 'package:flutter_application_1/screens/meeting_history.dart';
+// import 'package:flutter_application_1/screens/meeting_history.dart';
 import 'package:flutter_application_1/screens/message_screen.dart';
 import 'package:flutter_application_1/screens/quran_screen.dart';
 import 'package:flutter_application_1/utils/colors/colors.dart';
@@ -23,11 +24,11 @@ class _HomeScreenState extends State<HomeScreen> {
   // }
 
   final List<Widget> pages = [
-    const HomeContent(), // Page 1
-    const MessageScreen(), // Page 2
-    const Center(child: Text('Join Page')), // Page 3
-    const QuranScreen(),
-    const Center(child: Text('Profile'),), // Page 5: Profile
+    MeetingScreen(), // Page 1
+    MessageScreen(), // Page 2
+    MeetingScreen(),
+    QuranScreen(),
+    Center(child: Text('Profile'),), // Page 5: Profile
   ];
 
   @override
