@@ -19,6 +19,9 @@ createNewMeeting() async {
   );
 }
 
+joinMeeting(BuildContext context) {
+  Navigator.pushNamed(context, '/video-call');
+}
 
   @override
   Widget build(BuildContext context){
@@ -34,24 +37,24 @@ createNewMeeting() async {
               children: [
                 MeetingCard(
                   onPressed: createNewMeeting,
-                  icon: Icons.phone,
+                  icon: Icons.video_camera_front,
                   iconSize: 30.0,
                   color: Colors.lightBlue,
-                  text: 'Join meeting',
+                  text: 'New Meeting',
                 ),  
                 MeetingCard(
-                  onPressed: () {},
-                  icon: Icons.add,
+                  onPressed: ()=>{joinMeeting},
+                  icon: Icons.person_add,
                   iconSize: 30.0,
                   color: Colors.lightBlue,
-                  text: 'Create a meeting',
+                  text: 'Join Meeting',
                 ),
                 MeetingCard(
                   onPressed: () {},
-                  icon: Icons.phone,
+                  icon: Icons.question_mark,
                   iconSize: 30.0,
                   color: Colors.lightBlue,
-                  text: 'Join a meeting',
+                  text: 'Mysterious...',
                 ),
               ],
             ),
