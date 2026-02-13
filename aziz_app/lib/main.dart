@@ -14,11 +14,14 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   
-  String _text = "Hello World!";
-  Color _color = Colors.black;
+  String _text = "Tap me!";
+  Color _color = const Color.fromARGB(255, 0, 251, 255);
   Color _bg_color = Colors.white;
+  double box_height = 150;
+
   int tap_count = 0;
-  int long_press_count = 0;
+  int long_press_count = 0; 
+  int double_tap_count = 0;
 
     void logHelloWorld() {
       print('hello world');
@@ -32,6 +35,10 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blueAccent,
+          title: Center(child: Text('الأمم المتحدة - United Nations', style: TextStyle(color: Colors.white),)),
+        ),
         backgroundColor: Colors.grey,
         body: Center(
           child: Column(
@@ -43,7 +50,10 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Center(
-                child: Text('tap for red/yellow/green', style: TextStyle(fontSize: 20),),
+                child: Text('tap to change font color', style: TextStyle(fontSize: 20),),
+              ),
+              Center(
+                child: Text('double tap tp change size', style: TextStyle(fontSize: 20),),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 50),
@@ -58,19 +68,19 @@ class _MyAppState extends State<MyApp> {
                     switch (tap_count) {
                       case 0:
                         _color = Colors.red;
-                        _text = 'RED';
+                        _text = 'mohamed.menacing >:)';
                         tap_count++;
                         break;
                       
                       case 1:
                         _color = Colors.yellow;
-                        _text = 'YELLOW';
+                        _text = 'A.rahman';
                         tap_count++;
                         break;
                       
                       case 2:
                         _color = Colors.green;
-                        _text = 'GREEN';
+                        _text = 'sedrati';
                         tap_count++;
                         break;
                     } //end switch
@@ -87,12 +97,12 @@ class _MyAppState extends State<MyApp> {
                   setState(() {
                     switch (long_press_count) {
                       case 0:
-                        _bg_color = Colors.white;
+                        _bg_color = Colors.black;
                         long_press_count++;
                         break;
                       
                       case 1:
-                        _bg_color = Colors.black;
+                        _bg_color = Colors.white;
                         long_press_count++;
                         break;
                     }
@@ -104,9 +114,41 @@ class _MyAppState extends State<MyApp> {
                     }
                   });
                 },
+                onDoubleTap: () {
+                  setState(() {
+                    switch (double_tap_count) {
+                      case 0:
+                        box_height = 200;
+                        double_tap_count++;
+                        break;
+                      
+                      case 1:
+                        box_height = 250;
+                        double_tap_count++;
+                        break;
+                      
+                      case 2:
+                        box_height = 300;
+                        double_tap_count++;
+                        break;
+                      
+                      case 3:
+                        box_height = 350;
+                        double_tap_count++;
+                        break;
+                    }
+              
+                    if (double_tap_count > 3) {
+                      setState(() {
+                        double_tap_count = 0;
+                        box_height = 150;
+                      });
+                    }
+                  });
+                },
                 child: Container(
-                  height: 150,
-                  width: 150,
+                  height: box_height,
+                  width: box_height,
                   color: _bg_color,
                   child: Center(child: Text(_text, style: TextStyle(
                     fontWeight: FontWeight.bold,
