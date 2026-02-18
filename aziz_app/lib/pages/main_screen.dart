@@ -1,6 +1,6 @@
 import 'package:aziz_app/pages/cart_page.dart';
 import 'package:aziz_app/pages/settings_page.dart';
-import 'package:aziz_app/pages/task_page.dart';
+import 'package:aziz_app/pages/todo_page.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -15,8 +15,8 @@ class _MainScreenState extends State<MainScreen> {
 
   final List _pages = [
     HomePage(), 
-    TaskPage(),
     CartPage(),
+    TodoPage(),
   ];
 
   void _navigate(int newIndex) {
@@ -37,13 +37,13 @@ class _MainScreenState extends State<MainScreen> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.shopping_bag),
             label: 'Cart'
-          )
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.task_alt_rounded),
+            label: 'Todo'
+          ),
         ],
       ),
     );
